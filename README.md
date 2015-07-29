@@ -26,7 +26,18 @@ This correctly outputs `0`.
 
 ## How do I use it?
 
-The API right now is actually non-existent, but check the `test.js` file for the `expMod` example. In a few days I might update this with a proper parser/pretty-printer and command line tool.
+The API right now is actually non-existent, but check the `test.js` file for the `expMod` example. You can run it with `node.js`:
+
+    node test.js
+
+Outputs:
+
+    25
+    { iterations: 2579187,
+    applications: 1289514,
+    used_memory: 5938470 }
+
+Which is `100 ^ 100 % 31`. In a few days I might update this with a proper parser/pretty-printer and command line tool.
 
 ## Isn't there any programming language that implements functions optimally?
 
@@ -34,4 +45,4 @@ As important as functions are for programming in general, no common language imp
 
 ## What is this actually useful for?
 
-Not much, right now. It is optimal, but not optimized nor fast (it is written in JavaScript, after all). But it is something new that enables some things that aren't possible before and has a lot of potential that IMO deserves be explored. For example, the algorithm can be effortlessly distributed through hundreds of processing cores, but JavaScript can't even spawn threads.
+Not much, right now. It is optimal, but not optimized nor fast (it is written in JavaScript, after all), and I doubt there is anything *practical* this could do that couldn't be done faster with alternative known algorithms. But it is something new that enables some things that aren't possible before and has a lot of potential that IMO deserves be explored. For example, the algorithm can be effortlessly distributed through hundreds of processing cores, but JavaScript can't even spawn threads.
