@@ -49,9 +49,9 @@ module.exports = (function(){
 
     // Node :: Int -> Int -> IO Int
     // Allocates space for a node of given type (ROT/LAM/APP/DUP/ERA)
-    // and an integer tag. The type isn't actually on the reduction at all.
-    // The tag is: when their active ports meet, a pair will commute if their
-    // tags are different and annihilate if their tags are identical.
+    // and an integer tag. The type is used on the readback, and the tag is
+    // used for reductions: when active ports meet, a pair will commute if 
+    // their tags are different and annihilate if their tags are identical.
     // Returns the index on memory on which the node was allocated.
     function Node(type,tag){
         var idx = garbage.pop() || memory.length;
