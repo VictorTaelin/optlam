@@ -55,15 +55,15 @@ module.exports = (function(){
     // Returns the index on memory on which the node was allocated.
     function Node(type,tag){
         var idx = garbage.pop() || memory.length;
-        memory[idx+0] = type; 
-        memory[idx+1] = 0;
-        memory[idx+2] = 0;
-        memory[idx+3] = 0;
-        memory[idx+4] = 0;
-        memory[idx+5] = 0;
-        memory[idx+6] = 0;
-        memory[idx+7] = ++next_id;
-        memory[idx+8] = tag;
+        memory[idx+0] = type;      // Node type (used on readback)
+        memory[idx+1] = 0;         // Port 1 target port
+        memory[idx+2] = 0;         // Port 2 target port
+        memory[idx+3] = 0;         // Port 3 target port
+        memory[idx+4] = 0;         // Port 1 target node
+        memory[idx+5] = 0;         // Port 2 target node
+        memory[idx+6] = 0;         // Port 3 target node
+        memory[idx+7] = ++next_id; // Unique id
+        memory[idx+8] = tag;       // Tag (used to decide which reduction rule apply)
         stats.used_memory = memory.length;
         return idx;
     };
