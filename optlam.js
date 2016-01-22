@@ -2,20 +2,20 @@
 // An optimal λ-calculus normalizer written in JavaScript.
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Optlam.js is a simple, optimal (in Levy's sense) λ-calculus evaluator using
-// interaction nets. It uses Lamping's Abstract Algorithm - that is, the so
-// called (and problematic) "oracle" is avoided altogether. As such, it is only
-// capable of computing λ-terms that are typeable on Elementary Affine Logic.
-// As far as it concerns λ-wiki, it seems that most terms that matter are on
-// that subset, so this could perhaps be considered an optimization. Yet, being
-// optimal doesn't mean it is fast - it is implemented in JavaScript, after
-// all. Nether less, it is still asymptotically faster than naive evaluators
-// and is actually (and surprisingly) the fastest λ normalizer around, as far
-// as I'm aware, being able to quickly compute some λ-terms that even Haskell
-// would take years. Improved implementations would be great, and there is a
-// lot of potential to explore parallel (GPU/ASIC?) processing. The API is very
-// simple, consisting of one function, `reduce`, which receives a
-// bruijn-indexed, JSON-encoded λ calculus term and returns its normal form.
-// See this image for an overall idea of how the magic works:
+// interaction nets. It is, currently, as far as I know, the fastest
+// implementation of functions in the world. It uses Lamping's Abstract
+// Algorithm - that is, the so called (and problematic) "oracle" is avoided
+// altogether. As such, it is only capable of computing λ-terms that are
+// typeable on Elementary Affine Logic. This includes most functions that you'd
+// use in practice, but isn't powerful enough to process, for example, an
+// unhalting turing machine. Notice being optimal doesn't mean it is fast - it
+// is implemented in JavaScript, after all. Nether less, it is still
+// asymptotically faster than most evaluators, being able to quickly normalize
+// functions that even Haskell would take years. Improved implementations would
+// be great, and there is a lot of potential to explore parallel (GPU/ASIC?)
+// processing. The API is very simple, consisting of one function, `reduce`,
+// which receives a bruijn-indexed, JSON-encoded λ calculus term and returns
+// its normal form. See this image for an overall idea of how the magic works:
 // http://i.imgur.com/CSjrhsX.jpg
 // REPO    : https://github.com/maiavictor/optlam
 // EXAMPLE : optlam.reduce(App(Lam(Var(0)),Lam(Var(0)))) // ((λ x . x) (λ x . x))
