@@ -2,9 +2,13 @@
 
 An optimal function evaluator written in JavaScript.
 
-## What this does?
+## About
 
-This evaluates functions optimally. For example, what is the result of:
+Optlam.js is a simple, optimal (in Levy's sense) λ-calculus evaluator using interaction nets. It is, currently, as far as I know, the fastest implementation of functions in the world. It uses Lamping's Abstract Algorithm - that is, the so called (and problematic) "oracle" is avoided altogether. As such, it is only capable of computing λ-terms that are typeable on Elementary Affine Logic. This includes most functions that you'd use in practice, but isn't powerful enough to process, for example, an unhalting turing machine. Notice being optimal doesn't mean it is efficient - it is implemented in JavaScript, after all. Nether less, it is still asymptotically faster than most evaluators, being able to quickly normalize functions that [even Haskell would take years](http://stackoverflow.com/questions/31707614/why-are-%CE%BB-calculus-optimal-evaluators-able-to-compute-big-modular-exponentiation). Improved implementations would be great, and there is a lot of potential to explore parallel (GPU/ASIC?) processing. The API is very simple, consisting of one function, `reduce`, which receives a bruijn-indexed, JSON-encoded λ calculus term and returns its normal form. See [this image](http://i.imgur.com/CSjrhsX.jpg) for an overall idea of how the magic works.
+
+## Example
+
+What is the result of:
 
     (function (a){ return function(b){ return a; } })(1)(2);
 
@@ -39,9 +43,9 @@ Outputs:
 
 Which is `100 ^ 100 % 31`. In a few days I might update this with a proper parser/pretty-printer and command line tool.
 
-## Isn't there any programming language that implements functions optimally?
+## Why don't other languages implement functions optimally?
 
-As important as functions are for programming in general, no common language implements them optimally. A wide range of algorithms is used, but all are asymptotically suboptimal. Not even the so-called "functional", pure, lazy languages (i.e., Haskell) do it. It isn't without reason, though: real-world programming rarely need functions to be optimal. As much as we learned from Alonzo Church that functions alone are powerful enough to encode every computable program, in practice we rarely use them up to their limits, and prefer a range of primitive data structures and procedural algorithms instead. 
+As important as functions are for programming in general, no common language implements them optimally. A wide range of algorithms is used, but all are asymptotically suboptimal. Not even the so-called "functional", pure, lazy languages (i.e., Haskell) do it. The reason is most real-world programming rarely needs it. The difference can only be noticed in functions much more complex than what you'd write normally, and we already have very efficient algorithms for those simpler functions.
 
 ## How does it work?
 
@@ -49,4 +53,4 @@ It uses Lamping's "Abstract Algorithm", as explained on the [The Optimal Impleme
 
 ## What is this actually useful for?
 
-Not much, right now. It is optimal, but not optimized nor fast (it is written in JavaScript, after all), and I doubt there is anything *practical* this could do that couldn't be done faster with alternative known algorithms. But it is something new that enables some things that weren't possible before, and has a lot of potential that IMO deserves be explored. For example, the algorithm can be effortlessly distributed through hundreds of processing cores, but JavaScript can't even spawn threads.
+Not much, right now. It is optimal, but not terribly efficient (it is written in JavaScript, after all). I don't know if there is something *practical* Optlam, as is, could do that couldn't be done faster with alternative known algorithms. But it is something new that enables some things that weren't possible before, and has a lot of potential that deserves be explored. For example, the algorithm can be effortlessly distributed through hundreds of processing cores, but JavaScript can't even spawn threads.
