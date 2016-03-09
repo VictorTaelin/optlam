@@ -8,8 +8,8 @@
 // altogether. As such, it is only capable of computing λ-terms that are
 // typeable on Elementary Affine Logic. This includes most functions that you'd
 // use in practice, but isn't powerful enough to process, for example, an
-// unhalting turing machine. Notice being optimal doesn't mean it is fast - it
-// is implemented in JavaScript, after all. Nether less, it is still
+// unhalting turing machine. Notice being optimal doesn't mean it is efficient
+// - it is implemented in JavaScript, after all. Nether less, it is still
 // asymptotically faster than most evaluators, being able to quickly normalize
 // functions that even Haskell would take years. Improved implementations would
 // be great, and there is a lot of potential to explore parallel (GPU/ASIC?)
@@ -440,5 +440,7 @@ module.exports = (function(){
         net_encode      : net_encode,
         net_decode      : net_decode,
         net_reduce      : net_reduce,
-        stats           : stats};
+        stats           : stats,
+        
+        net_reduce_2    : net_reduce_2};
 })();
