@@ -442,5 +442,6 @@ module.exports = (function(){
         net_reduce      : net_reduce,
         stats           : stats,
         
-        net_reduce_2    : net_reduce_2};
+        // net_reduce_2    : net_reduce_2
+    };
 })();
