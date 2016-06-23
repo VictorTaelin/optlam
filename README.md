@@ -1,6 +1,8 @@
 ## Optlam.js
 
-An optimal function evaluator written in JavaScript. (Note: there is a slightly cleaner but slower and undocumented version [here](https://github.com/MaiaVictor/LPU/blob/master/src/lamnet.js), I recommend reading it if you just want to understand/port the algorithm.
+An optimal function evaluator written in JavaScript. 
+
+**Note: there is a slightly cleaner but undocumented version [here](https://github.com/MaiaVictor/interaction-combinators), I recommend reading it if you just want to understand/port the algorithm.**
 
 ## About
 
