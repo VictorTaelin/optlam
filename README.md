@@ -2,7 +2,7 @@
 
 An optimal function evaluator written in JavaScript. 
 
-**Note: there is a slightly cleaner but undocumented version [here](https://github.com/MaiaVictor/interaction-combinators), I recommend reading it if you just want to understand/port the algorithm.**
+**Note: this is deprecated, see a much cleaner version [here](https://github.com/maiavictor/abstract-algorithm).**
 
 ## About
 

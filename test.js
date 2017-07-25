@@ -12,7 +12,7 @@ var A = lambda.App, L = lambda.Lam, V = lambda.Var, n = lambda.nat, n_ = lambda.
 var exp_mod = L(L(L(A(A(A(V(0),L(L(A(V(1),L(A(A(V(1),L(L(A(V(1),A(A(V(2),V(1)),V(0)))))),V(0))))))),L(A(V(0),L(L(V(0)))))),L(A(A(A(V(2),V(3)),A(A(A(V(1),L(L(L(A(V(2),L(A(A(V(2),V(0)),V(1)))))))),L(V(0))),L(L(A(V(0),V(1)))))),A(A(A(V(1),L(L(V(1)))),L(V(0))),L(V(0)))))))))
 
 // With that, this term now computes `100 ^ 100 % 31`.
-var term = A(A(A(exp_mod,n(100)),n(100)),n(31));
+var term = A(A(A(exp_mod,n(10)),n(10)),n(3));
 
 // We use optlam to reduce the term, not lambda (which has a naive evaluator
 // that wouldn't finish any soon).  lambda.nat_ reads a church number back to a
